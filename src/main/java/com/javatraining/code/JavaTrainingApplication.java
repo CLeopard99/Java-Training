@@ -24,27 +24,16 @@ public class JavaTrainingApplication {
         System.out.println("Running from main... ");
 
         // Add to buy list (initial orders)
-        buyList.add(new Order("Account 2", 10, 40, "Buy"));
-        buyList.add(new Order("Account 2", 20, 25, "Buy"));
-        buyList.add(new Order("Account 1", 40, 10, "Buy"));
-        buyList.add(new Order("Account 1", 20, 5, "Buy"));
+        matchOrder(new Order("Account 2", 10, 40, "Buy"));
+        matchOrder(new Order("Account 2", 20, 25, "Buy"));
+        matchOrder(new Order("Account 1", 40, 10, "Buy"));
+        matchOrder(new Order("Account 1", 20, 5, "Buy"));
 
         // add to sell list (initial orders)
-        sellList.add(new Order("Account 3", 10, 45, "Sell"));
-        sellList.add(new Order("Account 3", 20, 60, "Sell"));
-        sellList.add(new Order("Account 1", 60, 80, "Sell"));
-        sellList.add(new Order("Account 1", 0, 0, "Sell"));
-
-        // No matches for these orders
-//        matchOrder(new Order("Account 3", 15, 30, "Buy"));
-//        matchOrder(new Order("Account 2", 15, 55, "Sell"));
-        // print new lists
-        System.out.println("buyList before: " + buyList);
-        System.out.println("sellList before: " + sellList);
-        // These order should match fully then partially
-       // matchOrder(new Order("Account 2", 15, 55, "Buy"));
-//        matchOrder(new Order("Account 2", 20, 25, "Sell"));
-        System.out.println("===========================================================");
+        matchOrder(new Order("Account 3", 10, 45, "Sell"));
+        matchOrder(new Order("Account 3", 20, 60, "Sell"));
+        matchOrder(new Order("Account 1", 60, 80, "Sell"));
+        matchOrder(new Order("Account 1", 0, 0, "Sell"));
 
         System.out.println("buyList after: " + buyList);
         System.out.println("sellList after: " + sellList);

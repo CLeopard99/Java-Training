@@ -24,8 +24,8 @@ public class Controller {
     }
 
     @GetMapping("/allorders")
-    public  Map<String,List<Order>> allorders() {
-        Map<String,List<Order>> ordersMap = new HashMap();
+    public Map<String, List<Order>> allorders() {
+        Map<String, List<Order>> ordersMap = new HashMap();
         ordersMap.put("buyList", matcher.buyList);
         ordersMap.put("sellList", matcher.sellList);
         return ordersMap;
@@ -41,21 +41,10 @@ public class Controller {
         return matcher.aggregatedSellData;
     }
 
-    @PostMapping ("/neworder")
-    public void neworder(@RequestBody @Valid Order order ) {
-
-        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        Validator validator = factory.getValidator();
-        Set<ConstraintViolation<Order>> violations = validator.validate(order);
-
-        Iterator<ConstraintViolation<Order>> iterator = violations.iterator();
-        while(iterator.hasNext()){
-            ConstraintViolation<Order> element = iterator.next();
-            System.out.println(element);
-        }
-
+    @PostMapping("/neworder")
+    public void neworder(@RequestBody @Valid Order order) {
         System.out.println("New order made: " + order);
-        Matcher.matchOrder(order);
+        matcher.matchOrder(order);
     }
 
 }

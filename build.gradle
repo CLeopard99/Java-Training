@@ -12,16 +12,20 @@ repositories {
 	mavenCentral()
 }
 
+
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation 'javax.validation:validation-api:2.0.1.Final'
 	implementation 'org.webjars.npm:jsonwebtoken:8.5.1'
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 	implementation 'org.springframework.security:spring-security-core:5.5.1'
-implementation 'org.springframework.security:spring-security-config:5.5.1'
+	implementation 'org.springframework.security:spring-security-config:5.5.1'
 	implementation 'org.springframework.security:spring-security-web:5.5.1'
     implementation 'jakarta.validation:jakarta.validation-api:3.0.0'
-	implementation 'org.hibernate.validator:hibernate-validator:7.0.1.Final'
+	implementation 'org.hibernate:hibernate-validator:7.0.1.Final'
+	implementation 'de.hashcode:jsr303-validators:1.1'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.1'
+	implementation 'com.h2database:h2:2.0.202'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 	//testImplementation 'org.springframework.boot:spring-boot-starter-test'

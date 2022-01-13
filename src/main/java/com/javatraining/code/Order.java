@@ -12,9 +12,9 @@ import javax.validation.constraints.Pattern;
 final public class Order implements Comparable<Order> {
     @NotNull
     private final String accountName;
-    @Min(1)
+    @Min(value = 1, message="Quantity must be above 1 or more")
     private int quantity;
-    @Min(value = 1, message="This isn't > 0")
+    @Min(value = 1, message="Price must be above 1 or more")
     private final int price;
     @Pattern(regexp = "Buy|Sell")
     private final String action;
